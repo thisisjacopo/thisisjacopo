@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>This Is Jacopo</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+      integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="swipe1"></div>
+    <div class="swipe2"></div>
+    <div class="swipe3"></div>
+    <div id="landing-container">
+      <!-- NAVBAR AND BURGER -->
+      <header class="header-container">
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+        </div>
+      </header>
+      <nav class="navbar">
+        <div class="nav-links">
+          <a href="./index.html"><h3 class="home-text">Home</h3></a>
+          <a href="./projects.html"><h3 class="pro-text">Projects</h3></a>
+          <a href="./aboutme.html"><h3 class="about-text">About Me</h3></a>
+          <a href="./contanct.html"><h3 class="cont-text">Contact</h3></a>
+        </div>
+      </nav>
+      <div class="cursor"></div>
+      <!-- MAIN BODY -->
+      <div class="main-txt-container">
+        <div class="icons">
+          <a class="favilink" href="https://github.com/thisisjacopo"
+            ><i class="fab fa-github fa-4x"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/thisisjacopo/" class="favilink"
+            ><i class="fab fa-linkedin-in fa-4x"></i
+          ></a>
+          <a href="https://twitter.com/thisisjacopo" class="favilink"
+            ><i class="fab fa-twitter fa-4x"></i
+          ></a>
+          <a
+            href="https://stackoverflow.com/users/12867227/jacopo"
+            class="favilink"
+            ><i class="fab fa-stack-overflow fa-4x"></i
+          ></a>
+          <a href="" class="favilink"></a>
+        </div>
+        <div class="intro">
+          <h1 class="main-title">Hi, this is Jacopo.</h1>
+          <p class="main-p">
+            I´m a JavaScript and Python full stack software engineer based in
+            Barcelona, Spain. I like to create interactive AI applications and
+            websites for artists and creative minds.
+          </p>
+          <button
+            onclick="location.href = './projects.html'"
+            class="projects-btn"
+          >
+            Check My Projects
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"
+      integrity="sha256-Pg1di+fBF53Rbh9oZR/FeD1xsFzTLC963lcac1D0ias="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./vanta-animation.js"></script>
+    <script src="./app.js"></script>
+    <script>
+      VANTA.TRUNK({
+        el: "#landing-container",
+        mouseControls: true,
+        touchControls: true,
+        minHeight: 380.0,
+        minWidth: 380.0,
+        scale: 4.0,
+        scaleMobile: 4.0,
+        color: 0x472c59,
+        backgroundColor: 0x111111,
+        spacing: 1.1,
+        chaos: 2.3,
+      });
+    </script>
+  </body>
+</html>

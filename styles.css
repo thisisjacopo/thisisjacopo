@@ -1,0 +1,738 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  place-items: center;
+}
+
+.swipe1 {
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(36, 35, 35);
+  position: fixed;
+  z-index: 3;
+}
+.swipe2 {
+  height: 100vh;
+  width: 100%;
+  background-color: #190d20;
+  position: fixed;
+  z-index: 2;
+}
+.swipe3 {
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(51, 51, 51);
+  position: fixed;
+  z-index: 1;
+}
+
+#defaultCanvas0 {
+  height: 100vh;
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #666565;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(26, 26, 26);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(107, 34, 34);
+}
+
+#landing-container {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  color: rgba(253, 250, 250, 0.651);
+  position: absolute;
+  z-index: 0;
+}
+
+/* LANDING TEXT STYLES  */
+
+#landing-container-projects {
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+  color: rgba(253, 250, 250, 0.733);
+  position: absolute;
+  z-index: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.main-txt-container {
+  margin-left: 2.5%;
+  width: 95%;
+  margin: 0 auto;
+  overflow-wrap: break-word;
+  overflow: hidden;
+}
+
+.intro {
+  margin-top: 7.5%;
+  width: 60%;
+  overflow-wrap: break-word;
+  margin-left: 17rem;
+}
+
+.main-title {
+  font-size: 80px;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.main-p {
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+
+.projects-btn {
+  width: 40%;
+  height: 5rem;
+  margin-top: 50px;
+  border: 2px solid #4e2d6679;
+  cursor: pointer;
+  font-family: "Montserrat";
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 1.8rem;
+  background: none;
+  color: rgba(253, 250, 250, 0.733);
+}
+.projects-btn:hover {
+  background-color: #36214bc4;
+  color: rgba(253, 250, 250, 0.781);
+  cursor: pointer;
+}
+
+/*ICONS*/
+.icons {
+  padding-top: 10%;
+  height: 75%;
+  width: 10%;
+  align-items: center;
+  justify-content: space-between;
+  justify-items: center;
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  float: right;
+  padding: 0.5rem;
+}
+
+.favilink {
+  text-decoration: none;
+  color: rgba(253, 250, 250, 0.651);
+  margin: 1.5rem;
+}
+
+.favilink:hover {
+  color: #53296dd7;
+}
+
+/* BURGER STYLES */
+
+.header-container {
+  min-height: 7vh;
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-left: 5%;
+  padding: 25px 0;
+  z-index: 2;
+}
+
+.burger {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  float: left;
+  width: 7.5%;
+  margin-top: 1.5rem;
+  z-index: 3;
+}
+
+.line1,
+.line2 {
+  background-color: rgba(253, 250, 250, 0.877);
+  height: 5px;
+  width: 90px;
+  margin: 5px;
+  float: right;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.navbar {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgb(17, 17, 17);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 1;
+  opacity: 1;
+  clip-path: circle(50px at -100% -10%);
+  -webkit-clip-path: circle(50px at -100% -10%);
+}
+
+.nav-links {
+  font-size: 4rem;
+  flex-basis: 30rem;
+  color: rgb(231, 231, 231);
+}
+
+.nav-links h3 {
+  padding: 2rem 0rem;
+  z-index: 2;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-links h3:hover {
+  color: #53296dd7;
+}
+
+.cursor {
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid #b2a5bbdc;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(253, 250, 250, 0.651);
+}
+
+/* CARDS STYLES AND PROJECT PAGE*/
+
+.top-div {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.top-div h1 {
+  font-size: 3rem;
+}
+.cards-container {
+  width: 90%;
+  align-items: flex-start;
+  justify-items: stretch;
+  margin-left: 4.5%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: repeat(autofit, minmax(500px, 1fr));
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+
+#card {
+  text-align: center;
+  position: relative;
+  text-shadow: 2px 2px black;
+  justify-content: center;
+  align-items: center;
+  color: rgba(233, 232, 232, 0.932);
+}
+
+#card img {
+  opacity: 0.7;
+  width: 310px;
+  height: 267px;
+  object-fit: cover;
+}
+
+#card h1 {
+  font-size: 1.7rem;
+  color: rgba(233, 232, 232, 0.932);
+}
+
+#card h1:hover {
+  color: #361e46;
+}
+
+#card h4 {
+  font-size: 1.4rem;
+}
+
+#card p {
+  font-size: 1rem;
+}
+
+#card li {
+  font-size: 1rem;
+}
+
+#card h6 {
+  font-size: 1.2rem;
+  color: rgba(233, 232, 232, 0.932);
+}
+#card h6:hover {
+  color: #361e46;
+}
+
+#card ul {
+  margin: 10px;
+}
+
+.card-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*ABOUT PAGE*/
+
+.about-container {
+  min-height: 100vh;
+  width: 60%;
+  overflow-wrap: break-word;
+  text-align: center;
+  align-items: center;
+  margin-top: 8rem;
+  color: #d7d5dae0;
+}
+
+.about-me-p {
+  font-size: 23px;
+}
+
+/* CONTACT FORM AND PAGE STYLES */
+.contact-container {
+  width: 50%;
+  height: 95vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form h1 {
+  font-size: 4rem;
+  letter-spacing: 1px;
+  margin-bottom: 2.5rem;
+}
+label {
+  font-size: 1.5rem;
+  margin: 0.5rem;
+  width: 90%;
+}
+input {
+  background: none;
+  border: none;
+  border-bottom: 2px solid #b2a5bbdc;
+  color: #b2a5bbdc;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin: 0.5rem;
+  width: 90%;
+}
+
+textarea {
+  border: 2px solid #b2a5bbdc;
+  height: 10rem;
+  color: #b2a5bbdc;
+  font-size: 1.25rem;
+  width: 90%;
+  height: 9rem;
+  background: none;
+  margin: 5px;
+}
+
+.form-button {
+  height: 3rem;
+  padding: 10px;
+  font-size: 1.4rem;
+  font-family: Montserrat;
+  background: none;
+  color: #b2a5bbdc;
+  border: 1px solid #b2a5bbdc;
+  cursor: pointer;
+}
+.form-button:hover {
+  background: #b2a5bbdc;
+  color: #361e46;
+}
+
+/* MEDIA QUERIZZZZ */
+
+@media screen and (max-width: 1060px) {
+  #defaultCanvas0 {
+    height: 100vh;
+    width: 100%;
+  }
+  #landing-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-items: space-around;
+    text-align: center;
+    color: rgba(253, 250, 250, 0.651);
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  /* LANDING TEXT STYLES  */
+  .main-txt-container {
+    margin-left: 2.5%;
+    width: 95%;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+  }
+  .intro {
+    margin-top: 25%;
+    width: 60%;
+    overflow-wrap: break-word;
+    margin-left: 12.5rem;
+  }
+  .main-title {
+    font-size: 80px;
+    letter-spacing: 2px;
+    cursor: none;
+    margin-bottom: 2rem;
+  }
+  .main-p {
+    font-size: 30px;
+    letter-spacing: 1px;
+  }
+  .icons {
+    margin: 10rem;
+    height: 95%;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    float: right;
+  }
+
+  .favilink {
+    text-decoration: none;
+    color: rgba(253, 250, 250, 0.651);
+    margin: 2rem;
+  }
+
+  /* BURGER STYLES */
+  .header-container {
+    min-height: 10vh;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    width: 90%;
+    margin-left: 5%;
+    padding: 55px 0;
+  }
+  .burger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    width: 22%;
+  }
+  .line1,
+  .line2 {
+    background-color: rgba(253, 250, 250, 0.877);
+    height: 8px;
+    width: 110px;
+    margin: 8px;
+    pointer-events: none;
+  }
+  /*NAVBAR STYLES*/
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgb(17, 17, 17);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 3;
+    opacity: 1;
+    clip-path: circle(50px at 100% -10%);
+    -webkit-clip-path: circle(50px at 100% -10%);
+  }
+  .nav-links {
+    font-size: 4rem;
+    flex-basis: 10rem;
+    color: rgb(231, 231, 231);
+  }
+
+  .nav-links h3 {
+    padding: 5rem 0rem;
+  }
+
+  .project-div {
+    background-color: rgb(169, 221, 65);
+    height: 5.5rem;
+    width: 40rem;
+  }
+
+  .aboutme-div {
+    background-color: rgb(65, 221, 221);
+    height: 5.5rem;
+    width: 40rem;
+  }
+
+  .contacts-div {
+    background-color: rgb(221, 172, 65);
+    height: 5.5rem;
+    width: 40rem;
+  }
+  .cursor {
+    opacity: 0;
+  }
+  /* CARDS STYLES AND PROJECT PAGE*/
+  .top-div h1 {
+    font-size: 2.5rem;
+  }
+
+  /*ABOUT PAGE*/
+
+  .about-container {
+    margin-top: 18%;
+    color: #d7d5dad7;
+    width: 80%;
+  }
+  .about-me-p {
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+
+  /* CONTACT FORM AND PAGE STYLES */
+  .contact-container {
+    width: 70%;
+    height: 95vh;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+  }
+}
+@media screen and (max-width: 460px) {
+  #defaultCanvas0 {
+    max-width: 460px;
+    min-height: 100vh;
+  }
+  #landing-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-items: space-around;
+    text-align: center;
+    color: rgba(253, 250, 250, 0.651);
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  /* LANDING TEXT STYLES  */
+  .main-txt-container {
+    margin-left: 2.5%;
+    width: 90%;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+  }
+  .intro {
+    margin-top: 45%;
+    width: 95%;
+    overflow-wrap: break-word;
+    margin-left: 1rem;
+  }
+  .main-title {
+    font-size: 40px;
+    letter-spacing: 1px;
+    cursor: none;
+    margin-bottom: 5px;
+  }
+  .main-p {
+    font-size: 18px;
+    margin: 1rem;
+  }
+  .icons {
+    height: 10%;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: row;
+    margin-top: 15%;
+    margin-bottom: 10%;
+    width: 75%;
+  }
+
+  .favilink {
+    text-decoration: none;
+    color: rgba(253, 250, 250, 0.651);
+    margin: 1rem;
+  }
+
+  .projects-btn {
+    width: 75%;
+    height: 4rem;
+    margin-top: 15px;
+    border: 3px solid #4e2d66a6;
+    cursor: pointer;
+    font-family: "Montserrat";
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 1.3rem;
+    background: none;
+    color: rgba(253, 250, 250, 0.733);
+  }
+
+  /* BURGER STYLES */
+  .header-container {
+    min-height: 2vh;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    width: 87%;
+    margin-left: 5%;
+    padding: 20px 0;
+  }
+  .burger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    width: 25%;
+  }
+  .line1,
+  .line2 {
+    background-color: rgba(241, 236, 236, 0.89);
+    background: rgba(241, 236, 236, 0.89);
+    height: 4px;
+    width: 65px;
+    margin: 5px;
+    pointer-events: none;
+  }
+  /*NAVBAR STYLES*/
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgb(17, 17, 17);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 1;
+    opacity: 1;
+    clip-path: circle(50px at 100% -10%);
+    -webkit-clip-path: circle(50px at 100% -10%);
+  }
+  .nav-links {
+    font-size: 2rem;
+    flex-basis: 7rem;
+    color: rgb(231, 231, 231);
+  }
+
+  .nav-links h3 {
+    padding: 2rem 0rem;
+  }
+
+  .project-div {
+    background-color: rgb(169, 221, 65);
+    height: 3rem;
+    width: 20rem;
+  }
+
+  .aboutme-div {
+    background-color: rgb(65, 221, 221);
+    height: 3rem;
+    width: 20rem;
+  }
+
+  .contacts-div {
+    background-color: rgb(221, 172, 65);
+    height: 3rem;
+    width: 20rem;
+  }
+  .cursor {
+    opacity: 0;
+  }
+
+  /* CARDS STYLES AND PROJECT PAGE*/
+  .top-div h1 {
+    font-size: 2rem;
+  }
+
+  /*ABOUT PAGE*/
+
+  .about-container {
+    margin-top: 3rem;
+    color: #d7d5dae0;
+    width: 95%;
+  }
+  .about-me-p {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+
+  /* CONTACT FORM AND PAGE STYLES */
+
+  .contact-container {
+    width: 92.5%;
+  }
+
+  .form h1 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+  label {
+    font-size: 1rem;
+    margin: 0.2rem;
+    width: 90%;
+  }
+  input {
+    background: none;
+    border: none;
+    border-bottom: 2px solid #b2a5bbdc;
+    color: #b2a5bbdc;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin: 0.5rem;
+    width: 90%;
+  }
+}
