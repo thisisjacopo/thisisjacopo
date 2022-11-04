@@ -1,19 +1,8 @@
-### Hello world! 👋
-<br/>
+### Hello world!
+<hr/>
 
-I am a full stack web developer based in Barcelona, with a solid CS background and a inclinance to new AI projects and bringing new ideas to light  
-
-<!--
-**thisisjacopo/thisisjacopo** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+- 👋 This is Jacopo.
+- 🌱 I’m a ever learning full stack web developer.
+- 💡 I'm interested in all AI things.
+- 💅🏻 And in making them look and feel nice.
+- 📫 You can reach me on my LinkedIn: https://www.linkedin.com/in/thisisjacopo
